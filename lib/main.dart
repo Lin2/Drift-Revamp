@@ -24,7 +24,6 @@ class CalendarPage extends StatefulWidget {
 }
 
 class _CalendarPageState extends State<CalendarPage> {
-  AnimationController _animationController;
   CalendarController _calendarController;
 
   static const Color textColor = Color(0xFFFFFFFF);
@@ -41,6 +40,8 @@ class _CalendarPageState extends State<CalendarPage> {
     _calendarController.dispose();
     super.dispose();
   }
+
+  void _onDaySelected(DateTime day, List events, List holidays) {}
 
   @override
   Widget build(BuildContext context) {
@@ -91,6 +92,11 @@ class _CalendarPageState extends State<CalendarPage> {
         weekdayStyle: TextStyle().copyWith(color: textColor),
         weekendStyle: TextStyle().copyWith(color: textColor),
       ),
+      availableCalendarFormats: const {
+        CalendarFormat.month: 'Month',
+        CalendarFormat.week: 'Week',
+      },
+      onDaySelected: _onDaySelected,
     );
   }
 }
