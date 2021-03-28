@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Drift',
+      theme: new ThemeData(scaffoldBackgroundColor: const Color(0x776970ff)),
+      debugShowCheckedModeBanner: false,
       home: CalendarPage(),
     );
   }
@@ -24,6 +26,9 @@ class CalendarPage extends StatefulWidget {
 class _CalendarPageState extends State<CalendarPage> {
   AnimationController _animationController;
   CalendarController _calendarController;
+
+  static const Color textColor = Color(0xFFFFFFFF);
+  static const Color subColor = Color(0xBBBBBBBB);
 
   @override
   void initState() {
@@ -43,7 +48,21 @@ class _CalendarPageState extends State<CalendarPage> {
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
-          _buildTableCalendar(),
+          Flexible(
+            child: FractionallySizedBox(
+              heightFactor: 0.2,
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: textColor,
+                width: 1,
+              ),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: _buildTableCalendar(),
+          ),
         ],
       ),
     );
@@ -52,6 +71,26 @@ class _CalendarPageState extends State<CalendarPage> {
   Widget _buildTableCalendar() {
     return TableCalendar(
       calendarController: _calendarController,
+      calendarStyle: CalendarStyle(
+        weekdayStyle: TextStyle().copyWith(color: textColor),
+        weekendStyle: TextStyle().copyWith(color: textColor),
+        outsideWeekendStyle: TextStyle().copyWith(color: subColor),
+      ),
+      headerStyle: HeaderStyle(
+        formatButtonTextStyle: TextStyle().copyWith(color: textColor),
+        formatButtonDecoration: BoxDecoration(
+          border: Border.all(
+            color: textColor,
+            width: 1,
+          ),
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        titleTextStyle: TextStyle().copyWith(color: textColor),
+      ),
+      daysOfWeekStyle: DaysOfWeekStyle(
+        weekdayStyle: TextStyle().copyWith(color: textColor),
+        weekendStyle: TextStyle().copyWith(color: textColor),
+      ),
     );
   }
 }
