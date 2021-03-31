@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'customcolors.dart';
+import 'calendar.dart';
+import 'social.dart';
+import 'profile.dart';
 
 /// This is the stateful widget that the main application instantiates.
 class Home extends StatefulWidget {
@@ -10,26 +14,39 @@ class Home extends StatefulWidget {
 //https://api.flutter.dev/flutter/material/BottomNavigationBar-class.html
 /// This is the private State class that goes with MyStatefulWidget.
 class _HomeState extends State<Home> {
+  //for navigation
+  int _currentIndex = 1;
+  final List<Widget> _children = [
+    SocialPage(),
+    CalendarPage(),
+    ProfilePage(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('My Flutter App'),
-      ),
+      body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0, // this will be set when a new tab is tapped
+        onTap: onTabTapped, // new
+        currentIndex: _currentIndex, // new
         items: [
           BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            label: 'Home',
+            //temporary names and icons
+            icon: new Icon(Icons.cloud_outlined),
+            label: 'Dream Tinder',
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.mail),
-            label: 'Messages',
+            icon: new Icon(Icons.book_rounded),
+            label: 'Dream Calendar',
           ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile')
         ],
       ),
     );
+  }
+
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
   }
 }

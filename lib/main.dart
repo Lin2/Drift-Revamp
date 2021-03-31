@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'calendar.dart';
+import 'customcolors.dart';
 import 'home.dart';
 
 void main() {
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Drift',
-      theme: new ThemeData(scaffoldBackgroundColor: const Color(0x776970ff)),
+      theme: new ThemeData(scaffoldBackgroundColor: CustomColors.base),
       debugShowCheckedModeBanner: false,
       home: Home(),
     );
