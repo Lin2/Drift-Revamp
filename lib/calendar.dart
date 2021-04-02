@@ -10,8 +10,8 @@ class CalendarPage extends StatefulWidget {
 class _CalendarPageState extends State<CalendarPage> {
   CalendarController _calendarController;
 
-  static const Color textColor = Color(0xFFFFFFFF);
-  static const Color subColor = Color(0xBBBBBBBB);
+  static const Color textColor = CustomColors.base_white;
+  static const Color subColor = CustomColors.base_gray;
 
   @override
   void initState() {

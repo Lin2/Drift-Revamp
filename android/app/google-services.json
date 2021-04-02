@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "409195823811",
+    "project_id": "drift-revamp",
+    "storage_bucket": "drift-revamp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409195823811:android:eca658462d5e4b18811876",
+        "android_client_info": {
+          "package_name": "com.example.drift"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "409195823811-shffrv4slv14hn66rhgh8ad4mvo90es5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVeRDlmgUr5IaYY_OMdCgZw8GCiTQhyHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "409195823811-shffrv4slv14hn66rhgh8ad4mvo90es5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

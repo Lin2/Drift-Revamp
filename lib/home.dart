@@ -26,8 +26,11 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        onTap: onTabTapped, // new
-        currentIndex: _currentIndex, // new
+        backgroundColor: CustomColors.base_dark,
+        selectedItemColor: CustomColors.base_white,
+        unselectedItemColor: CustomColors.base_gray,
+        onTap: onTabTapped,
+        currentIndex: _currentIndex,
         items: [
           BottomNavigationBarItem(
             //temporary names and icons
