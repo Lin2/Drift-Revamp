@@ -15,10 +15,10 @@ class SocialPage extends StatefulWidget {
 class _SocialPageState extends State<SocialPage> {
   //temp values
   final List<CustomCard> cards = [
-    CustomCard(dreamtype: "surreal dream"),
-    CustomCard(dreamer: "restless dreamer", dreamtype: "nightmare"),
-    CustomCard(dreamtype: "dream"),
-    CustomCard(dreamer: "early bird"),
+    CustomCard(dreamtype: "(1)surreal dream"),
+    CustomCard(dreamer: "(2)restless dreamer", dreamtype: "nightmare"),
+    CustomCard(dreamtype: "(3)dream"),
+    CustomCard(dreamer: "(4)early bird"),
   ];
   int currentCardIndex = 0;
 
@@ -42,7 +42,8 @@ class _SocialPageState extends State<SocialPage> {
                   if (!(currentCardIndex + 1 >= cards.length))
                     Align(
                       alignment: Alignment.center,
-                      child: cards[currentCardIndex + 1],
+                      //TODO make this not awkward
+                      child: cards[currentCardIndex], //temp card during swipe
                     ),
                 ],
                 onLeftSwipe: () => swipeLeft(),
@@ -68,8 +69,7 @@ class _SocialPageState extends State<SocialPage> {
   }
 
   void swipeLeft() {
-    print("left");
-
+    //left means go next
     // NOTE: it is your job to change the card
     setState(() {
       currentCardIndex++;
@@ -77,9 +77,13 @@ class _SocialPageState extends State<SocialPage> {
   }
 
   void swipeRight() {
-    print("right");
+    //right means go previous
     setState(() {
-      currentCardIndex++;
+      if (currentCardIndex == 0) {
+        currentCardIndex = cards.length - 1; //if first, loop to back
+      } else {
+        currentCardIndex--;
+      }
     });
   }
 
@@ -88,12 +92,12 @@ class _SocialPageState extends State<SocialPage> {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
         TextButton(
-          child: Text("Left"),
-          onPressed: () => cardController.triggerSwipeLeft(),
+          child: Text("Previous"),
+          onPressed: () => cardController.triggerSwipeRight(),
         ),
         TextButton(
-          child: Text("Right"),
-          onPressed: () => cardController.triggerSwipeRight(),
+          child: Text("Next"),
+          onPressed: () => cardController.triggerSwipeLeft(),
         ),
       ],
     );

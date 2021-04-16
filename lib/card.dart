@@ -20,11 +20,12 @@ class CustomCard extends StatelessWidget {
       width: 320,
 
       // Warning: hard-coding values like this is a bad practice
-      padding: EdgeInsets.all(38.0),
+      padding: EdgeInsets.all(22.0),
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(15.0),
         border: Border.all(
+          //maybe rid of this
           width: 1.0,
           color: CustomColors.base_white.withOpacity(0.9),
         ),
@@ -33,7 +34,7 @@ class CustomCard extends StatelessWidget {
       child: Text(
         finalstring,
         style: TextStyle(
-          fontSize: 36.0,
+          fontSize: 30.0,
           // color: Colors.white,
           color: CustomColors.base_white.withOpacity(0.8),
           fontWeight: FontWeight.w900,
