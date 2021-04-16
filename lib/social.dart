@@ -15,10 +15,15 @@ class SocialPage extends StatefulWidget {
 class _SocialPageState extends State<SocialPage> {
   //temp values
   final List<CustomCard> cards = [
-    CustomCard(dreamtype: "(1)surreal dream"),
-    CustomCard(dreamer: "(2)restless dreamer", dreamtype: "nightmare"),
-    CustomCard(dreamtype: "(3)dream"),
-    CustomCard(dreamer: "(4)early bird"),
+    //can have any number of constructors, default is dreamer and dream(purple)
+    //maybe can have chance to get restless/just dreamer for spice?
+    CustomCard(dreamtype: "surreal dream"),
+    CustomCard(dreamer: "restless dreamer"),
+    CustomCard(dreamtype: "dream"),
+    CustomCard(dreamer: "early bird", dreamtype: "emotional dream"),
+    CustomCard(dreamtype: "special dream"),
+    CustomCard(dreamtype: "nightmare"),
+    CustomCard(dreamtype: "good dream"),
   ];
   int currentCardIndex = 0;
 

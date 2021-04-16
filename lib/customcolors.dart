@@ -9,6 +9,6 @@ class CustomColors {
   static const Color accent_yellow = Color(0xffffc224);
   static const Color accent_purple = Color(0xff6444e6);
   static const Color accent_red = Color(0xffff3f56);
-  static const Color accent_violet = Color(0xff6444e6);
-  static const Color accent_blue = Color(0xffd93cf3);
+  static const Color accent_violet = Color(0xffd93cf3);
+  static const Color accent_blue = Color(0xff4dbdf6);
 }
