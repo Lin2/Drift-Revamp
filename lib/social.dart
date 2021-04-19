@@ -39,12 +39,12 @@ class _SocialPageState extends State<SocialPage> {
               SwipeableWidget(
                 cardController: _cardController,
                 animationDuration: 500,
-                horizontalThreshold: 0.85,
+                horizontalThreshold: .85,
                 child: cards[currentCardIndex],
                 nextCards: <Widget>[
                   // show next card
                   // if there are no next cards, show nothing
-                  if (!(currentCardIndex + 1 >= cards.length))
+                  if (currentCardIndex + 1 < cards.length)
                     Align(
                       alignment: Alignment.center,
                       //TODO make this not awkward
@@ -56,6 +56,7 @@ class _SocialPageState extends State<SocialPage> {
               )
             else
               // if the deck is complete, add a button to reset deck
+              // TODO maybe automatic loop around?
               Center(
                 child: TextButton(
                   child: Text("Reset deck"),

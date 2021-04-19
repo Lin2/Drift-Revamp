@@ -1,4 +1,6 @@
+import 'package:drift/authenticationservice.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'customcolors.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -6,11 +8,14 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Center(
       child: new Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          new Text(
-            'profile placeholder',
-          ),
+        children: [
+          Text("Profile"),
+          ElevatedButton(
+            onPressed: () {
+              context.read<AuthenticationService>().signOut();
+            },
+            child: Text("Sign out"),
+          )
         ],
       ),
     );

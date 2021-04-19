@@ -33,23 +33,12 @@ class CustomCard extends StatelessWidget {
         ),
       ),
 
-      /*child: Text(
-        finalstring,
-        style: TextStyle(
-          fontSize: 30.0,
-          color: CustomColors.base_white.withOpacity(0.8),
-          fontWeight: FontWeight.w900,
-        ),
-      ),
-    );
-  }*/
-
       child: RichText(
         text: new TextSpan(
             style: new TextStyle(
               fontSize: 30.0,
               color: CustomColors.base_white.withOpacity(0.8),
-              fontWeight: FontWeight.w900,
+              fontWeight: FontWeight.w500,
             ),
             children: [
               new TextSpan(text: 'A $dreamer\'s '),
