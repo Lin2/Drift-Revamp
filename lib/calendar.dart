@@ -1,6 +1,7 @@
 import 'package:table_calendar/table_calendar.dart';
 import 'package:flutter/material.dart';
 import 'customcolors.dart';
+import 'journalEdit.dart';
 
 class CalendarPage extends StatefulWidget {
   @override
@@ -25,7 +26,12 @@ class _CalendarPageState extends State<CalendarPage> {
     super.dispose();
   }
 
-  void _onDaySelected(DateTime day, List events, List holidays) {}
+  void _onDaySelected(DateTime day, List events, List holidays) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => JournalEdit()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
